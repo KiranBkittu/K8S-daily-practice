@@ -4,7 +4,10 @@ metadata:
   name: main
 spec:
   selector:
-    color: blue
+   # color: blue
+   # dept: test
+   #Changing to green service post testing in preview service
+    color: green
     dept: test
   ports:
     - protocol: TCP
