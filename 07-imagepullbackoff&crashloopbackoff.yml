@@ -1,0 +1,25 @@
+# This is for image pull backoff nginx01 image not found so scheduler assigned to the node but but image not started bcz image of nginx01 is not available so it goes to image pull backoff 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: imagepullbackoff
+  labels:
+    pupose: k1
+    user: rames
+spec:
+  containers:
+    - name: nginx
+      image: nginx01
+---
+apiVersion: v1 # crash loop backoff
+kind: Pod
+metadata:
+  name: crashloopbackoff
+  labels:
+    purpose: k1
+    user: suresh
+spec:
+  containers:
+    - name: almalinux
+      image: almalinux:9
+# we are not mentioning running command like sleep, container can't understand how to start so it goes to crashloop backoff
