@@ -13,4 +13,8 @@ spec:
         limits: # maximum
           memory: "120Mi"
           cpu: "120m"
+      env:
+        - name: course
+          value: devops 
+
 # resource limit size to accoupy the memory and cpu for the pod if we won't give anything it may take complete space. we can give request or limits it will take that only as min and max
