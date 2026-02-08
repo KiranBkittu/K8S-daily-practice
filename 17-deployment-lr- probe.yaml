@@ -26,15 +26,17 @@ spec:
               port: 80
               targetPort: 80
           readlinessProbe:
-            tcpSocket:
-              port: 80
+            httpGet:
+              path: /health
+              port: 8080
             initialDelaySeconds: 15
             periodSeconds: 10
           livenessProbe:
-            tcpSocket:
-              port: 80
-            initialDelaySeconds: 15
-            periodSeconds: 10
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 3
 
 
   
