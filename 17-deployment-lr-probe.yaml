@@ -24,7 +24,7 @@ spec:
           ports:
             - protocol: TCP
               containerPort: 80              
-          readlinessProbe:
+          readinessProbe:
             httpGet:
               path: /health
               port: 8080
