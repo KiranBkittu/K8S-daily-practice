@@ -24,18 +24,18 @@ spec:
           ports:
             - protocol: TCP
               containerPort: 80              
-          # readlinessProbe:
-          #   httpGet:
-          #     path: /health
-          #     port: 8080
-          #   initialDelaySeconds: 15
-          #   periodSeconds: 10
-          # livenessProbe:
-          #   httpGet:
-          #     path: /ready
-          #     port: 8080
-          #   initialDelaySeconds: 5
-          #   periodSeconds: 3
+          readlinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 3
 
 
   
