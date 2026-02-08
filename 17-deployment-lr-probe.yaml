@@ -23,8 +23,7 @@ spec:
           #image: nginx # latest image
           ports:
             - protocol: TCP
-              port: 80
-              targetPort: 80
+              containerPort: 80              
           # readlinessProbe:
           #   httpGet:
           #     path: /health
