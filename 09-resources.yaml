@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resource-utils
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      resources:
+        requests: # minimum
+          memory: "68Mi"
+          cpu: "100m"
+        limits: # maximum
+          memory: "120Mi"
+          cpu: "120m"
+# resource limit size to accoupy the memory and cpu for the pod if we won't give anything it may take complete space. we can give request or limits it will take that only as min and max

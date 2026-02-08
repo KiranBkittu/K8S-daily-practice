@@ -1,0 +1,23 @@
+# labels are used to filter and select the other resources
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labels-01
+  labels:
+    purpose: test
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+---
+#This are same like labels but used to select external resources outside of kubernetes
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotations-01
+  annotations:
+    git.url: https://github.com/KiranBkittu/K8S-daily-practice.git
+spec:
+  containers:
+    - name: nginx
+      image: nginx

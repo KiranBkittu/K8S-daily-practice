@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: conf-01
+data:
+  course: "Devops with aws"
+  duration: "120hrs"
+  trainer: "kiran"
+  # we can see the data after describe pod, we are creating config separatly and refering to pod, to avoid lenthy of env variables
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-map-demo
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      envFrom:
+        - configMapRef:
+            name: conf-01
+
+# it comes as key value pairs, instead of using env in the image we are refereing from config Map
