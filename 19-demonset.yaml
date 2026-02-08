@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: DemonSet
+metadata:
+  name: dp
+spec:
+  selector:
+    matchLabels:
+      project: c2
+      client: kvbad
+  template:
+    metadata:
+      labels:
+        project: c2
+        client: kvbad
+    spec:
+      containers:
+        - name: nginx
+          image: nginx # latest image
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html # index.html from node
+            - name: log-volume
+              mountPath: /var/log/nginx
+      volumes:
+        - name: html-volume
+          hostPath:
+            path: /data/nginx
+            type: Directory
+        - name: log-volume
+          hostPath:
+            path: /data/nginx-logs
+            type: DirectoryOrCreate
