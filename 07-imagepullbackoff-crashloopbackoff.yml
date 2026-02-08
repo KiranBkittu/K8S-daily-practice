@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: imagepullbackoff
+  name: error-01
   labels:
     pupose: k1
     user: rames
@@ -14,7 +14,7 @@ spec:
 apiVersion: v1 # crash loop backoff
 kind: Pod
 metadata:
-  name: crashloopbackoff
+  name: error-02
   labels:
     purpose: k1
     user: suresh
