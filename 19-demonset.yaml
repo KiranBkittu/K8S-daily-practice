@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: DemonSet
+kind: DaemonSet
 metadata:
-  name: dp
+  name: demonset-demo
 spec:
   selector:
     matchLabels:
